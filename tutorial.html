@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css"
+		/>
+		<link rel="stylesheet" href="./css/tutorial.css" />
+	</head>
+	<body>
+		<form class="form js-speaker-form">
+			<div class="form-field">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name" placeholder="John Johson" autofocus />
+			</div>
+
+			<div class="form-field">
+				<label for="tel">Tel</label>
+				<input type="tel" name="tel" id="tel" />
+			</div>
+
+			<div class="form-field">
+				<label for="mail">E-mail</label>
+				<input type="email" name="mail" id="mail" />
+			</div>
+
+			<div role="group" class="group">
+				<h2 class="group-title">Theme</h2>
+				<ul class="topic-options">
+					<li>
+						<input type="checkbox" name="topic" value="html" id="html" />
+						<label for="html">HTML</label>
+					</li>
+					<li>
+						<input type="checkbox" name="topic" value="css" id="css" />
+						<label for="css">CSS</label>
+					</li>
+				</ul>
+			</div>
+
+			<div role="group" class="group">
+				<h2 class="group-title">Experience</h2>
+				<ul class="exp-options">
+					<li>
+						<input type="radio" name="experience" value="jun" id="jun" />
+						<label for="jun">Junior</label>
+					</li>
+
+					<li>
+						<input type="radio" name="experience" value="mid" id="mid" />
+						<label for="mid">Middle</label>
+					</li>
+
+					<li>
+						<input type="radio" name="experience" value="sen" id="sen" />
+						<label for="sen">Senior</label>
+					</li>
+				</ul>
+			</div>
+
+			<div class="form-field">
+				<label for="pdf">Load</label>
+				<input type="file" name="pdf" id="pdf" />
+			</div>
+
+			<div class="form-field">
+				<label for="comment">Comment</label>
+				<textarea class="comment" name="comment" id="comment" cols="30" rows="10" placeholder="Leave your comment">
+Leave your comment</textarea
+				>
+			</div>
+
+			<div class="form-field">
+				<input type="checkbox" name="policy" id="policy" />
+				<label for="policy">Submit</label>
+			</div>
+
+			<button type="submit">Send</button>
+		</form>
+
+		<script>
+			;(() => {
+				document.querySelector(".js-speaker-form").addEventListener("submit", e => {
+					e.preventDefault()
+
+					new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`))
+				})
+			})()
+		</script>
+	</body>
+</html>
