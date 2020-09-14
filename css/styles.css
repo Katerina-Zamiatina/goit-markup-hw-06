@@ -788,13 +788,16 @@ button {
 	outline: none;
 }
 
-.btn-close::before {
+.close:focus,
+.close:hover {
+}
+/* .btn-close::before {
 	content: "";
 	display: inline-block;
 	width: 30px;
 	height: 30px;
 	background-image: url(../images/modal/close.svg);
-}
+} */
 
 textarea {
 	resize: none;
@@ -827,14 +830,23 @@ textarea {
 .form-input {
 	padding-top: 11px;
 	padding-bottom: 11px;
-	padding-left: 0;
+	padding-left: 42px;
 	padding-right: 0;
 	border: 1px solid rgba(33, 33, 33, 0.2);
 	border-radius: 4px;
+
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 1.16;
+	letter-spacing: 0.01em;
+	color: var(--primary-text-color);
 }
 
 .form-input:focus {
 	outline-color: var(--accent-color);
+}
+.form-input:focus ~ .icon-modal {
+	fill: var(--accent-color);
 }
 
 .form-label {
